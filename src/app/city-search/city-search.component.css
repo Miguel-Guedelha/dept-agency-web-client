@@ -1,0 +1,33 @@
+label {
+  display: block;
+}
+
+#search-field {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.previous-search {
+  background-color: #6eb2f1;
+  color: black;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 10px;
+  margin: 0 5px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.previous-search:hover {
+  background-color: #2171bb;
+  color: white;
+}
+
+.previous-search:first-of-type {
+  margin-left: 0px;
+}
+
+.container {
+  display: flex;
+}

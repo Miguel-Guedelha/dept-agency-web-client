@@ -1,0 +1,15 @@
+<h2>Check the air quality for a city!</h2>
+
+<div id="search-box">
+    <label for="search-field">City name:</label>
+    <input #searchField id="search-field" (input)="edit(searchField.value)">
+
+    <button (click)="onSubmit()">Search</button>
+</div>
+
+<h3 *ngIf="previousSearches.length > 0">Previous searches:</h3>
+<div class="container">
+    <div class="previous-search" (click)="onPreviousSearch(i)" *ngFor="let item of previousSearches; index as i">
+        {{item}}
+    </div>
+</div>

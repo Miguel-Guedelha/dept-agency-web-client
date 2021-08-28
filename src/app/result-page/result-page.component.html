@@ -1,0 +1,30 @@
+<div *ngIf="cityData;else loading">
+
+    <div *ngIf="cityData.locations.length === 0;else found">
+        No locations could be found for the specified city. Please check the city name casing is correct or it exists.
+    </div>
+
+    <ng-template #found> 
+        <div *ngIf="multipleLocations(); else result" #found>
+            <h3>Choose a location</h3>
+            <div *ngFor="let item of cityData.locations; index as i">
+                <div class="location-choice" (click)="onChoice(i)">
+                    {{item.name}}
+                </div>
+            </div>
+        </div>
+
+        <ng-template #result>
+            <h3>{{cityData.locations[0].name}}</h3>
+            <div *ngFor="let item of cityData.locations[0].parameters">
+                <div class="parameter-card">
+                    {{item.displayName}}: {{item.lastValue}} {{item.unit}}
+                </div>
+            </div>
+        </ng-template>
+    </ng-template>
+</div>
+
+<ng-template #loading>
+    Loading...
+</ng-template>
